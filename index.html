@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+
+<title> Gallary </title>
+  </head>
+<style>
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.cuddlynest.com/blog/wp-content/uploads/2020/06/Wonders-of-the-World-Colosseum-1.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.button {
+  background-color: #cf901b; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box;}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  padding: 1rem;
+  font-familiy: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5;  
+}
+
+p {
+  margin: .5rem 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* First the Grid */
+.gallery-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.5rem;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* The Picture Frame */
+.gallery-frame {
+  padding: .5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #333;
+  color: #d9d9d9;
+}
+
+/* The Images */
+.gallery-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.25s ease-in-out;
+} 
+
+.filter-button {
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #ffa64d;
+}
+
+
+</style>
+<body>
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Responsive Image Gallery</h1>
+    <p>Wonders of the World</p>
+  </div>
+</div>
+
+
+ 
+  <p>These awe-inspiring wonders come in various forms - some are a result of natural processes, while others have been crafted by human hands. Some exist beneath the water's surface, while others are relatively new to the world, and some have been standing for ages. Nevertheless, they all share one attribute - their ability to captivate and enthrall those who witness their grandeur.</p>
+  
+  <h3>Filter Images based off location. Some examples being Peru, India, Italy etc</h3>
+  <input type="text" id="searchBar" onkeyup="filterImages()" placeholder="Search...">
+
+  <div class="gallery-grid">
+    <figure class="gallery-frame">
+      <img id="myImage" class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2019/04/6I9A0074.jpg?w=1600&ssl=1" title="Jordan">
+      <figcaption>The Treasury at Petra, Jordan </figcaption>
+    </figure>
+
+
+    <figure class="gallery-frame">
+      <img id="myImage2" class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-7-1.jpg?resize=1024%2C1536&ssl=1" alt="symbol image" title="Egypt">
+      <figcaption>Great Pyramid of Giza, Egypt</figcaption>
+    </figure>
+
+    <figure class="gallery-frame">
+      <img id="myImage3" class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-4-1.jpg?resize=1022%2C1536&ssl=1" alt="symbol image" title="UK">
+      <figcaption>Stonehenge, UK</figcaption>
+    </figure>
+
+
+    <figure class="gallery-frame">
+      <img id="myImage4"  class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-11-1.jpg?resize=1024%2C1536&ssl=1" alt="symbol image" title="Italy">
+  
+      <figcaption>Colosseum of Rome, Italy</figcaption>
+    </figure>
+
+
+    <figure class="gallery-frame">
+      <img id="myImage5" class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2017/04/HandLuggageOnly-3-2.jpg?resize=1161%2C1536&ssl=1" alt="symbol image" title="China">
+      <figcaption>Great Wall of China, China</figcaption>
+    </figure>
+
+
+    <figure class="gallery-frame">
+      <img id="myImage6" class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-18.jpg?resize=1025%2C1536&ssl=1" alt="symbol image" title="Italy">
+      <figcaption>Leaning Tower of Pisa, Italy</figcaption>
+    </figure>
+
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2017/05/IMG_3199-s.jpg?w=1600&ssl=1" alt="symbol image" title="Peru">
+      <figcaption>Machu Picchu, Peru</figcaption>
+    </figure>
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-16-1.jpg?resize=1025%2C1536&ssl=1" alt="symbol image" title="India">
+      <figcaption>Taj Mahal, India</figcaption>
+    </figure>
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-3-1.jpg?resize=1020%2C1536&ssl=1" alt="symbol image" title="Cambodia">
+      <figcaption>Angkor Wat, Cambodia</figcaption>
+    </figure>
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-9-1.jpg?resize=1024%2C1536&ssl=1" alt="symbol image" title="USA">
+      <figcaption>Grand Canyon, USA</figcaption>
+    </figure>
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-6-1.jpg?resize=1024%2C1536&ssl=1" alt="symbol image" title="Australia">
+      <figcaption>Great Barrier Reef, Australia</figcaption>
+    </figure>
+    <figure class="gallery-frame">
+      <img class="gallery-img" src="https://i0.wp.com/handluggageonly.co.uk/wp-content/uploads/2014/10/HandLuggageOnly-21.jpg?resize=1311%2C2048&ssl=1" alt="symbol image" title="Iceland">
+      <figcaption>Aurora Borealis, Iceland</figcaption>
+    </figure>
+  </div><!-- end:gallery-grid -->
+</body>
+
+<script>
+  function makeRed() {
+    var image = document.getElementById("myImage");
+    image.style.filter = "sepia(100%) hue-rotate(30deg) saturate(200%)";
+  }
+
+  function makeBlue() {
+    var image = document.getElementById("myImage");
+    image.style.filter = "hue-rotate(180deg) saturate(200%)";
+  }
+
+  function makeGreen() {
+    var image = document.getElementById("myImage");
+    image.style.filter = "sepia(50%) hue-rotate(-45deg) saturate(150%)";
+  }
+
+
+  function duplicateImage() {
+  // Get the image element
+  var img = document.getElementById("myImage2");
+  
+  // Create a new image element
+  var newImg = document.createElement("img");
+  
+  // Copy the source and alt attributes of the original image
+  newImg.src = img.src;
+  newImg.alt = img.alt;
+  
+  // Add the new image element to the gallery
+  var gallery = document.querySelector(".gallery-grid");
+  gallery.appendChild(newImg);
+}
+
+
+
+function increaseBrightness() {
+  var image = document.getElementById("myImage3");
+  var brightness = parseFloat(image.style.filter.replace("brightness(", "").replace("%)", ""));
+  if (isNaN(brightness)) {
+    brightness = 100;
+  }
+  brightness += 10;
+  image.style.filter = "brightness(" + brightness + "%)";
+}
+
+
+function reduceResolution() {
+  const img = document.getElementById("myImage4");
+  img.style.width = "50%"; // reduce the width to 50% of the original size
+  img.style.height = "auto"; // maintain the aspect ratio
+}
+function createAvatar() {
+  var image = document.getElementById("myImage5").src;
+  var avatarUrl = "https://avatars.io/api/?name=avatar&background=random&length=2&size=200&format=png&url=" + encodeURIComponent(image);
+  window.open(avatarUrl);
+}
+
+
+
+function myFunction() {
+  document.getElementById("myImage6").style.filter = "grayscale(100%)";
+}
+
+function filterImages() {
+    // Get the user's search input
+    let searchInput = document.getElementById("searchBar").value.toLowerCase();
+
+    // Get all the images in the gallery
+    let images = document.querySelectorAll(".gallery-img");
+
+    // Remove any existing buttons
+    let buttons = document.querySelectorAll(".filter-button");
+    buttons.forEach(button => button.remove());
+
+    // Loop through each image and hide/show based on the search input
+    for (let i = 0; i < images.length; i++) {
+        let imageTitle = images[i].getAttribute("title").toLowerCase();
+        if (imageTitle.includes(searchInput)) {
+            images[i].parentElement.style.display = "block";
+            
+            // Create a button to grayscale the image
+            let grayscaleButton = document.createElement("button");
+            grayscaleButton.innerHTML = "Grayscale";
+            grayscaleButton.className = "filter-button";
+            grayscaleButton.onclick = function() {
+                images[i].style.filter = "grayscale(100%)";
+            };
+            images[i].parentElement.appendChild(grayscaleButton);
+            
+            // Create a button to make the image red
+            let redButton = document.createElement("button");
+            redButton.innerHTML = "Green";
+            redButton.className = "filter-button";
+            redButton.onclick = function() {
+                images[i].style.filter = "sepia(100%) hue-rotate(30deg) saturate(200%)";
+            };
+            images[i].parentElement.appendChild(redButton);
+
+            let fButton = document.createElement("button");
+            fButton.innerHTML = "Red";
+            fButton.className = "filter-button";
+            fButton.onclick = function() {
+                images[i].style.filter = "sepia(50%) hue-rotate(-45deg) saturate(150%)";
+            };
+            images[i].parentElement.appendChild(fButton);
+
+            let bButton = document.createElement("button");
+            bButton.innerHTML = "Blue";
+            bButton.className = "filter-button";
+            bButton.onclick = function() {
+                images[i].style.filter = "hue-rotate(180deg) saturate(200%)";
+            };
+            images[i].parentElement.appendChild(bButton);
+
+
+
+            // Create a button to increase the brightness of the image
+            let brightnessButton = document.createElement("button");
+            brightnessButton.innerHTML = "Increase Brightness";
+            brightnessButton.className = "filter-button";
+            brightnessButton.onclick = function() {
+                images[i].style.filter = "brightness(150%)";
+            };
+            images[i].parentElement.appendChild(brightnessButton);
+
+                        // Create a button to decrease the resolution of the image
+            let blurButton = document.createElement("button");
+            blurButton.innerHTML = "Blur";
+            blurButton.className = "filter-button";
+            blurButton.onclick = function() {
+                images[i].style.filter = "blur(10px)";
+            };
+            images[i].parentElement.appendChild(blurButton);
+
+            // Create a button to increase the resolution of the image
+            let sharpenButton = document.createElement("button");
+            sharpenButton.innerHTML = "Sharpen";
+            sharpenButton.className = "filter-button";
+            sharpenButton.onclick = function() {
+                images[i].style.filter = "none";
+            };
+            images[i].parentElement.appendChild(sharpenButton);
+
+
+
+            // Create a button to duplicate the image
+            let duplicateButton = document.createElement("button");
+            duplicateButton.innerHTML = "Duplicate";
+            duplicateButton.className = "filter-button";
+            duplicateButton.onclick = function() {
+                let newImage = images[i].cloneNode();
+                newImage.style.width = "50%";
+                newImage.style.marginLeft = "10px";
+                images[i].parentElement.appendChild(newImage);
+                
+                // Create a button to remove the duplicated image
+                let removeButton = document.createElement("button");
+                removeButton.innerHTML = "Remove Duplicate";
+                removeButton.className = "filter-button";
+                removeButton.onclick = function() {
+                    newImage.remove();
+                    removeButton.remove();
+                };
+                images[i].parentElement.appendChild(removeButton);
+
+
+            };
+            images[i].parentElement.appendChild(duplicateButton);
+
+        } else {
+            images[i].parentElement.style.display = "none";
+        }
+    }
+}
+
+
+
+
+</script>
+
+</html> 
